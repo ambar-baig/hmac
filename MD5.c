@@ -123,8 +123,8 @@ uint8_t* MD5_digest(const uint8_t* data, const size_t data_length, uint8_t diges
 
     MD5_context md5_ctx; /* Create MD5 Instance */
     MD5_init(&md5_ctx); /* Initialize MD5 Instance */
-    MD5_update(&md5_ctx); /* Compute MD5 Hash */
-    MD5_finalize(&md5_ctx); /* Finalize MD5 Hash */
+    MD5_update(&md5_ctx, data, data_length); /* Compute MD5 Hash */
+    MD5_finalize(digest, &md5_ctx); /* Finalize MD5 Hash */
     
     return digest; /* returns Digest */
 
